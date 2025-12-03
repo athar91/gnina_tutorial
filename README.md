@@ -269,7 +269,3 @@ Final notes and tips
 
 References
 - GNINA paper: Roes et al., Journal of Cheminformatics (2021). https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00522-2
-
-If you want, I can:
-- Add the helper scripts to the repository (run_dock_exhaustiveness.sh and plot_exhaustiveness.py), or
-- Generate a ready-to-run example that executes all steps for 3ERK (requires GNINA/OpenBabel installed on your machine).
