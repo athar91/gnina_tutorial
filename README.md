@@ -109,9 +109,11 @@ obabel -:'C1CNCCC1N2C=NC(=C2C3=NC(=NC=C3)N)C4=CC=C(C=C4)F' -O lig-random.sdf --g
 gnina -r ../rec.pdb -l lig-random.sdf --autobox_ligand ../re-docking/lig.pdb --seed 0 -o docked_random.pdb --exhaustiveness 8
 ```
 5. RMSD of the best pose vs experimental ligand
+
 ```
 obrms -firstonly ../re-docking/lig.pdb docked_random.pdb
 ```
+
 Investigate: which starting conformation gives better RMSD and CNN score (GNINA prints CNN scoring information). Compare affinity (CNN score, Vina/Vinardo scores) as reported in the output SDF/PDB.
 
 3) Scoring-only / rescoring
@@ -119,9 +121,11 @@ Investigate: which starting conformation gives better RMSD and CNN score (GNINA 
 Purpose: evaluate different scoring functions on fixed poses.
 
 - Score only with default scoring:
+
 ```
 gnina --score_only -r ../re-docking/rec.pdb -l ../re-docking/lig.pdb --verbosity=2
 ```
+
 - List available scoring functions:
 ```
 gnina --help | grep scoring | head -3
