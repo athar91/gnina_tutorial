@@ -33,23 +33,24 @@ Purpose: show GNINA can re-create the experimental bound pose.
 
 Commands (inside a working directory, e.g. re-docking):
 1. Make a directory and download the PDB
+```
    mkdir re-docking
    cd re-docking
    wget https://files.rcsb.org/download/3ERK.pdb
-
-2. Extract protein atoms only (ATOM records)
+```
+3. Extract protein atoms only (ATOM records)
    grep "^ATOM" 3ERK.pdb > rec.pdb
 
-3. Fix connectivity (OpenBabel will add bond info)
+4. Fix connectivity (OpenBabel will add bond info)
    obabel rec.pdb -O rec-fix.pdb
 
-4. Extract ligand (SB4 is the ligand code in 3ERK)
+5. Extract ligand (SB4 is the ligand code in 3ERK)
    grep SB4 3ERK.pdb > lig.pdb
 
-5. Perform a simple docking (autobox_ligand centers the box on the bound ligand)
+6. Perform a simple docking (autobox_ligand centers the box on the bound ligand)
    gnina -r rec.pdb -l lig.pdb --autobox_ligand lig.pdb --seed 0 -o docked.pdb
 
-6. Compute RMSD of top pose vs experimental ligand
+7. Compute RMSD of top pose vs experimental ligand
    obrms -firstonly lig.pdb docked.pdb
 
 Open docked.pdb in VMD / PyMOL and compare poses visually.
