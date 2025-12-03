@@ -46,15 +46,6 @@ Quick notes about common commands used here
 -------------------------------------------------
 Purpose: show GNINA can re-create the experimental bound pose.
 
-Commands (inside a working directory, e.g. re-docking):
-
-cd .. && mkdir docking && cd docking
-cp ../re-docking/rec.pdb ../re-docking/lig.pdb .
-
-obabel -:'C1CNCCC1N2C=NC(=C2C3=NC(=NC=C3)N)C4=CC=C(C=C4)F' -O lig-random.sdf --gen3D
-
-gnina -r ../rec.pdb -l lig-random.sdf --autobox_ligand ../re-docking/lig.pdb --seed 0 -o docked_random.pdb --exhaustiveness 8
-obrms -firstonly ../re-docking/lig.pdb docked_random.pdb
 1. Make a directory and download the PDB
 ```
    mkdir re-docking
@@ -88,6 +79,8 @@ Assignment 1 (suggested)
 - Investigate the effect of --exhaustiveness on the docking RMSD.
 - Use the helper script run_dock_exhaustiveness.sh included in this repo to automate runs and produce a CSV of RMSD vs exhaustiveness values.
 - Plot RMSD vs exhaustiveness with plot_exhaustiveness.py and determine the lowest exhaustiveness that yields converged (stable/acceptable) RMSD. Default is 8.
+bash plot_exhaustiveness.sh
+bash plot_exhaustiveness.py
 
 2) Docking from a random conformer (same system, new starting ligand)
 --------------------------------------------------------------------
@@ -152,7 +145,9 @@ gnina --score_only -r rec.pdb -l lig.pdb | grep CNN
 4) Blind docking
 ----------------
 Purpose: search the whole receptor surface for possible binding sites.
-
+cd ..
+mkdir blind
+cp ../rec.pdb ../lig.pdb .
 - Blind docking by centering autobox on receptor (autobox_ligand rec.pdb)
   ```
 gnina -r rec.pdb -l lig.pdb --autobox_ligand rec.pdb -o docked-blind.pdb --seed 0
@@ -223,6 +218,10 @@ gnina -r errec.pdb -l workshop_minimized_results.sdf.gz --minimize -o gnina_scor
 ```
 3. Compute ROC / AUC:
    - The file how-to-run-VS1.txt contains instructions and pointers to VS1.py (script included in this repo or workshop). Use that script to get ROC/AUC and typical enrichment metrics.
+```
+
+python BS1.py
+
 
 Assignment 3 (suggested)
 - Try other scoring functions (cnn family, classic scorings) and compare AUC/enrichment.
