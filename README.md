@@ -1,13 +1,28 @@
-# gnina_tutorial
-# GNINA docking tutorial
+# GNINA Docking Tutorial
 
-This tutorial shows common GNINA docking workflows: redocking, docking from a random conformer, blind docking, flexible docking, scoring/rescoring, and a basic virtual screening example. Commands below follow the GNINA software (Roes lab) — see the paper: https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00522-2
+This repository provides a practical tutorial for common GNINA docking workflows:
+- Redocking
+- Docking from a random conformer
+- Blind docking
+- Flexible docking
+- Scoring / rescoring
+- Basic virtual screening (VS)
 
-Prerequisites
-- GNINA installed and available in your PATH (or use full binary path, e.g. /usr/local/gnina/gnina.1.3.2).
-- OpenBabel (obabel, obrms) installed.
-- wget, gzip, awk, python3 with matplotlib and pandas for plotting.
-- A molecular viewer (VMD, PyMOL, ChimeraX) to inspect results.
+It follows the GNINA software (Roes lab).  
+Reference: [Roes et al., Journal of Cheminformatics (2021)](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00522-2)
+
+---
+
+## 📦 Prerequisites
+- GNINA installed and available in your `PATH` (or use full binary path, e.g. `/usr/local/gnina/gnina.1.3.2`)
+- OpenBabel (`obabel`, `obrms`)
+- `wget`, `gzip`, `awk`, `python3` with `matplotlib` and `pandas`
+- A molecular viewer (VMD, PyMOL, ChimeraX)
+
+---
+
+## 📂 Repository Layout
+
 
 Repository layout used in this tutorial (created on the fly):
 - re-docking/         — reproduce bound pose (redocking)
@@ -32,6 +47,14 @@ Quick notes about common commands used here
 Purpose: show GNINA can re-create the experimental bound pose.
 
 Commands (inside a working directory, e.g. re-docking):
+
+cd .. && mkdir docking && cd docking
+cp ../re-docking/rec.pdb ../re-docking/lig.pdb .
+
+obabel -:'C1CNCCC1N2C=NC(=C2C3=NC(=NC=C3)N)C4=CC=C(C=C4)F' -O lig-random.sdf --gen3D
+
+gnina -r ../rec.pdb -l lig-random.sdf --autobox_ligand ../re-docking/lig.pdb --seed 0 -o docked_random.pdb --exhaustiveness 8
+obrms -firstonly ../re-docking/lig.pdb docked_random.pdb
 1. Make a directory and download the PDB
 ```
    mkdir re-docking
@@ -45,15 +68,16 @@ Commands (inside a working directory, e.g. re-docking):
 4. Fix connectivity (OpenBabel will add bond info)
 ```
    obabel rec.pdb -O rec-fix.pdb
-```
+
 6. Extract ligand (SB4 is the ligand code in 3ERK)
 ```
    grep SB4 3ERK.pdb > lig.pdb
-```
+
 7. Perform a simple docking (autobox_ligand centers the box on the bound ligand)
+
 ```
    gnina -r rec.pdb -l lig.pdb --autobox_ligand lig.pdb --seed 0 -o docked.pdb
-```
+
 8. Compute RMSD of top pose vs experimental ligand
    ```
    obrms -firstonly lig.pdb docked.pdb
