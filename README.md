@@ -127,6 +127,11 @@ Investigate: which starting conformation gives better RMSD and CNN score (GNINA 
 ## 📦  3) Scoring-only / rescoring
 --------------------------
 Purpose: evaluate different scoring functions on fixed poses.
+```
+cd ..
+mkdir rescoring
+```
+
 
 - Score only with default scoring:
 
