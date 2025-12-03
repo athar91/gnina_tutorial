@@ -41,7 +41,7 @@ Commands (inside a working directory, e.g. re-docking):
 3. Extract protein atoms only (ATOM records)
    ```
    grep "^ATOM" 3ERK.pdb > rec.pdb
-```
+
 4. Fix connectivity (OpenBabel will add bond info)
 ```
    obabel rec.pdb -O rec-fix.pdb
