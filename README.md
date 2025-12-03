@@ -108,7 +108,10 @@ Purpose: check robustness to ligand starting conformation.
 ```
 cp ../re-docking/rec.pdb ../re-docking/lig.pdb .
 ```
-3. Generate a random 3D conformer from SMILES using OpenBabel
+3. Now let's dock with a randomly-generated conformation of the ligand. From the pdb page of the 3ERK system, scroll until you find the "Small molecules" section.
+You will find 1 unique ligand, namely "4-(4-FLUOROPHENYL)-1-(4-PIPERIDINYL)-5-(2-AMINO-4-PYRIMIDINYL)-IMIDAZOLE".
+Copy that string into pubchem (https://pubchem.ncbi.nlm.nih.gov/), and copy the SMILES string and generate a random conformation with openbabel
+
 ```
 obabel -:'C1CNCCC1N2C=NC(=C2C3=NC(=NC=C3)N)C4=CC=C(C=C4)F' -O lig-random.sdf --gen3D
 ```
@@ -122,7 +125,9 @@ gnina -r ../rec.pdb -l lig-random.sdf --autobox_ligand ../re-docking/lig.pdb --s
 obrms -firstonly ../re-docking/lig.pdb docked_random.pdb
 ```
 
-Investigate: which starting conformation gives better RMSD and CNN score (GNINA prints CNN scoring information). Compare affinity (CNN score, Vina/Vinardo scores) as reported in the output SDF/PDB.
+Increase the exhaustiveness parameter to 512, and investigate how rmsd and scoring changes
+
+Also assess which starting conformation gives better RMSD and CNN score (GNINA prints CNN scoring information). Compare affinity (CNN score, Vina/Vinardo scores) as reported in the output SDF/PDB.
 
 ## 📦  3) Scoring-only / rescoring
 --------------------------
@@ -130,6 +135,7 @@ Purpose: evaluate different scoring functions on fixed poses.
 ```
 cd ..
 mkdir rescoring
+cd rescoring
 ```
 
 
