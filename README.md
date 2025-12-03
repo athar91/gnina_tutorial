@@ -85,8 +85,13 @@ Assignment 1 (suggested)
 - Investigate the effect of --exhaustiveness on the docking RMSD.
 - Use the helper script run_dock_exhaustiveness.sh included in this repo to automate runs and produce a CSV of RMSD vs exhaustiveness values.
 - Plot RMSD vs exhaustiveness with plot_exhaustiveness.py and determine the lowest exhaustiveness that yields converged (stable/acceptable) RMSD. Default is 8.
-bash plot_exhaustiveness.sh
+```
+bash run_dock_exhaustiveness.sh
+```
+
+```
 bash plot_exhaustiveness.py
+```
 <img width="600" height="500" alt="rmsd_pose_distribution_subplots" src="https://github.com/user-attachments/assets/df0b4bfb-e6bd-4c7d-8621-50bc142d7e29" />
 
 ## 📦 2) Docking from a random conformer (same system, new starting ligand)
