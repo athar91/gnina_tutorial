@@ -139,7 +139,7 @@ gnina --score_only -r rec.pdb -l lig.pdb --verbosity=2 --scoring ad4_scoring
 gnina --score_only -r rec.pdb -l lig.pdb --verbosity=2 --scoring ad4_scoring --print_terms
 ```
 - Custom scoring terms file:
-  ```
+```
 gnina --score_only -r rec.pdb -l lig.pdb --score_only --custom_scoring scoring-terms-all.txt
 ```
 Try the convolutional neural network (CNN) scoring family:
