@@ -1,4 +1,6 @@
 # GNINA Docking Tutorial
+This tutorial is a part of course of "Molecular Modeling of biological System" of Department of Physics, University of Cagliari.
+
 
 This repository provides a practical tutorial for common GNINA docking workflows:
 - Redocking
@@ -42,7 +44,7 @@ Quick notes about common commands used here
 - --flexdist N and --flexdist_ligand <lig> : set distance-based flexible region
 - obrms -firstonly ref.pdb poses.pdb : compute RMSD of the first (top) pose vs reference
 
-1) Redocking: recover the exact bound conformation
+## 📦  1) Redocking: recover the exact bound conformation
 -------------------------------------------------
 Purpose: show GNINA can re-create the experimental bound pose.
 
@@ -86,7 +88,7 @@ Assignment 1 (suggested)
 bash plot_exhaustiveness.sh
 bash plot_exhaustiveness.py
 
-2) Docking from a random conformer (same system, new starting ligand)
+## 📦 2) Docking from a random conformer (same system, new starting ligand)
 --------------------------------------------------------------------
 Purpose: check robustness to ligand starting conformation.
 
@@ -116,7 +118,7 @@ obrms -firstonly ../re-docking/lig.pdb docked_random.pdb
 
 Investigate: which starting conformation gives better RMSD and CNN score (GNINA prints CNN scoring information). Compare affinity (CNN score, Vina/Vinardo scores) as reported in the output SDF/PDB.
 
-3) Scoring-only / rescoring
+## 📦  3) Scoring-only / rescoring
 --------------------------
 Purpose: evaluate different scoring functions on fixed poses.
 
@@ -152,7 +154,7 @@ Try the convolutional neural network (CNN) scoring family:
 ```
 gnina --score_only -r rec.pdb -l lig.pdb | grep CNN
 ```
-4) Blind docking
+## 📦  4) Blind docking
 ----------------
 Purpose: search the whole receptor surface for possible binding sites.
 ```
@@ -173,7 +175,7 @@ Notes:
 - Blind docking is slower and may require larger exhaustiveness.
 - Evaluate top clusters/poses and their CNN scores to prioritize predicted sites.
 
-5) Flexible docking
+## 📦  5) Flexible docking
 -------------------
 Purpose: allow receptor residues (sidechains / local backbone) to move during docking.
 
@@ -212,7 +214,7 @@ Assignment 2 (suggested)
 - Investigate convergence of results vs. exhaustiveness in the flexible and rigid cases and compare RMSD / CNN score.
 - Which flexible setup (distance-based vs explicit residues) gives the best recovery for the 4ERK system?
 
-6) Virtual screening (VS) example
+## 📦  6) Virtual screening (VS) example
 --------------------------------
 Purpose: score a ligand database against a receptor and assess enrichment.
 
