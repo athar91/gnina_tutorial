@@ -135,7 +135,7 @@ gnina --help | grep scoring | head -3
 gnina --score_only -r rec.pdb -l lig.pdb --verbosity=2 --scoring ad4_scoring
 ```
 - Print scoring terms:
-  ```
+```
 gnina --score_only -r rec.pdb -l lig.pdb --verbosity=2 --scoring ad4_scoring --print_terms
 ```
 - Custom scoring terms file:
