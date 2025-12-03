@@ -57,7 +57,7 @@ Commands (inside a working directory, e.g. re-docking):
 8. Compute RMSD of top pose vs experimental ligand
    ```
    obrms -firstonly lig.pdb docked.pdb
-```
+
 Open docked.pdb in VMD / PyMOL and compare poses visually.
 
 Assignment 1 (suggested)
