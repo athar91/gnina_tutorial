@@ -263,7 +263,11 @@ Assignment 2 (suggested)
 ## 📦  6) Virtual screening (VS) example
 --------------------------------
 Purpose: score a ligand database against a receptor and assess enrichment.
-
+```
+cd ..
+mkdir VS
+cd VS
+```
 1. Example files used below:
 
 ```
