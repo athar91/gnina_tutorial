@@ -200,7 +200,7 @@ Purpose: search the whole receptor surface for possible binding sites.
 cd ..
 mkdir blind
 cd blind
-cp ../rec.pdb ../lig.pdb .
+cp ../re-docking/rec.pdb ../re-docking/lig.pdb .
 ```
 
 - Blind docking by centering autobox on receptor (autobox_ligand rec.pdb)
