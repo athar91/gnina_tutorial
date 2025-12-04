@@ -94,6 +94,11 @@ bash run_dock_exhaustiveness.sh
 ```
 
 ```
+for i in 8 16 32 64; do (cd "$i" && obrms --firstonly lig.pdb docked.pdb > rmsd.dat); done
+```
+
+
+```
 python plot_exhaustiveness.py
 ```
 <img width="600" height="500" alt="rmsd_pose_distribution_subplots" src="https://github.com/user-attachments/assets/df0b4bfb-e6bd-4c7d-8621-50bc142d7e29" />
