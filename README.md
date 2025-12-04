@@ -167,8 +167,7 @@ gnina --score_only -r ../re-docking/rec.pdb -l ../re-docking/lig.pdb --verbosity
 gnina --score_only -r ../re-docking/rec.pdb -l ../re-docking/lig.pdb --verbosity=2 --scoring ad4_scoring --print_terms
 ```
 - Custom scoring terms file:
-```
-
+  
 ```
 gnina --help | grep scoring | head -3
 ```
@@ -178,7 +177,6 @@ gnina --print_terms | grep -v atom_type > scoring-terms-tmp
 ```
 
 
-```
 Try the convolutional neural network (CNN) scoring family:
 - See available CNN models:
 ```
