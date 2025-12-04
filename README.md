@@ -94,7 +94,7 @@ bash run_dock_exhaustiveness.sh
 ```
 
 ```
-bash plot_exhaustiveness.py
+python plot_exhaustiveness.py
 ```
 <img width="600" height="500" alt="rmsd_pose_distribution_subplots" src="https://github.com/user-attachments/assets/df0b4bfb-e6bd-4c7d-8621-50bc142d7e29" />
 
