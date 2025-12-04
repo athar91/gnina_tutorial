@@ -76,7 +76,7 @@ Purpose: show GNINA can re-create the experimental bound pose.
 
 8. Compute RMSD of top pose vs experimental ligand
 ```
-   obrms -firstonly lig.pdb docked.pdb
+   obrms --firstonly lig.pdb docked.pdb
 ```
 
 Open docked.pdb in VMD / PyMOL and compare poses visually.
