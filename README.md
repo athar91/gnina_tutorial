@@ -121,7 +121,7 @@ obabel -:'C1CNCCC1N2C=NC(=C2C3=NC(=NC=C3)N)C4=CC=C(C=C4)F' -O lig-random.sdf --g
 ```
 4. Dock the random conformer (example uses exhaustiveness 8)
 ```
-gnina -r ../rec.pdb -l lig-random.sdf --autobox_ligand ../re-docking/lig.pdb --seed 0 -o docked_random.pdb --exhaustiveness 8
+gnina -r rec.pdb -l lig-random.sdf --autobox_ligand ../re-docking/lig.pdb --seed 0 -o docked_random.pdb --exhaustiveness 8 --cpu 8 --cnn crossdock_default2018
 ```
 5. RMSD of the best pose vs experimental ligand
 
