@@ -168,7 +168,16 @@ gnina --score_only -r ../re-docking/rec.pdb -l ../re-docking/lig.pdb --verbosity
 ```
 - Custom scoring terms file:
 ```
-gnina --score_only -r rec.pdb -l lig.pdb --score_only --custom_scoring scoring-terms-all.txt
+
+```
+gnina --help | grep scoring | head -3
+```
+
+```
+gnina --print_terms | grep -v atom_type > scoring-terms-tmp
+```
+
+
 ```
 Try the convolutional neural network (CNN) scoring family:
 - See available CNN models:
