@@ -160,11 +160,11 @@ gnina --help | grep scoring | head -3
 ```
 - Score with classical scoring (example: ad4_scoring):
 ```
-gnina --score_only -r rec.pdb -l lig.pdb --verbosity=2 --scoring ad4_scoring
+gnina --score_only -r ../re-docking/rec.pdb -l ../re-docking/lig.pdb --verbosity=2 --scoring ad4_scoring
 ```
 - Print scoring terms:
 ```
-gnina --score_only -r rec.pdb -l lig.pdb --verbosity=2 --scoring ad4_scoring --print_terms
+gnina --score_only -r ../re-docking/rec.pdb -l ../re-docking/lig.pdb --verbosity=2 --scoring ad4_scoring --print_terms
 ```
 - Custom scoring terms file:
 ```
