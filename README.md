@@ -209,7 +209,7 @@ gnina -r rec.pdb -l lig.pdb --autobox_ligand rec.pdb -o docked-blind.pdb --seed 
 ```
 - For a random ligand conformer:
 ```
-obrms -firstonly lig.pdb docked-blind.pdb | head -n 10
+obrms --firstonly lig.pdb docked-blind.pdb | head -n 10
 ```
 Notes:
 - Blind docking is slower and may require larger exhaustiveness.
@@ -235,7 +235,7 @@ gnina -r rec2-fix.pdb -l ../re-docking/lig.pdb --autobox_ligand lig2.pdb --seed 
 ```
 
 ```
-obrms -firstonly ../re-docking/lig.pdb docked-lig-onto-4ERK.pdb
+obrms --firstonly ../re-docking/lig.pdb docked-lig-onto-4ERK.pdb
 ```
 2. Try higher exhaustiveness if initial docking is poor:
 
@@ -274,7 +274,7 @@ wget http://bits.csb.pitt.edu/files/workshop_minimized_results.sdf.gz
 2. A simple VS run with VINARDO scoring:
 
 ```
-gnina -r errec.pdb -l workshop_minimized_results.sdf.gz --minimize -o gnina_scored_vinardo.sdf.gz --scoring vinardo
+gnina -r errec.pdb -l workshop_minimized_results.sdf.gz --minimize -o gnina_scored_vinardo.sdf.gz --scoring vinardo 
 ```
 
 3. Compute ROC / AUC:
