@@ -246,15 +246,15 @@ obrms --firstonly ../re-docking/lig.pdb docked-lig-onto-4ERK.pdb
 2. Try higher exhaustiveness if initial docking is poor:
 
 ```
-gnina -r rec2-fix.pdb -l ../re-docking/lig.pdb --autobox_ligand lig2.pdb --seed 0 -o docked-lig-onto-4ERK.pdb --exhaustiveness 512
+gnina -r rec2-fix.pdb -l ../re-docking/lig.pdb --autobox_ligand lig2.pdb --seed 0 -o docked-lig-onto-4ERK.pdb --exhaustiveness 512 --cpu 8 --cnn crossdock_default2018
 ```
 3. Enable flexible residues by distance from the autobox ligand:
 ```
-gnina -r rec2-fix.pdb -l ../re-docking/lig.pdb --autobox_ligand lig2.pdb --seed 0 -o docked-lig-onto-4ERK-flex.pdb --flexdist 4 --flexdist_ligand lig2.pdb --out_flex flexout.pdb
+gnina -r rec2-fix.pdb -l ../re-docking/lig.pdb --autobox_ligand lig2.pdb --seed 0 -o docked-lig-onto-4ERK-flex.pdb --flexdist 4 --flexdist_ligand lig2.pdb --out_flex flexout.pdb --cpu 8 --cnn crossdock_default2018
 ```
 4. Or specify exact residues to be flexible:
 ```
-gnina -r rec2-fix.pdb -l ../re-docking/lig.pdb --autobox_ligand lig2.pdb --seed 0 -o docked-lig-onto-4ERK-flex2.pdb --exhaustiveness 16 --flexres A:52,A:103 --out_flex flexout2.pdb
+gnina -r rec2-fix.pdb -l ../re-docking/lig.pdb --autobox_ligand lig2.pdb --seed 0 -o docked-lig-onto-4ERK-flex2.pdb --exhaustiveness 16 --flexres A:52,A:103 --out_flex flexout2.pdb --cpu 8 --cnn crossdock_default2018
 ```
 Assignment 2 (suggested)
 - Investigate convergence of results vs. exhaustiveness in the flexible and rigid cases and compare RMSD / CNN score.
@@ -280,7 +280,7 @@ wget http://bits.csb.pitt.edu/files/workshop_minimized_results.sdf.gz
 2. A simple VS run with VINARDO scoring:
 
 ```
-gnina -r errec.pdb -l workshop_minimized_results.sdf.gz --minimize -o gnina_scored_vinardo.sdf.gz --scoring vinardo 
+gnina -r errec.pdb -l workshop_minimized_results.sdf.gz --minimize -o gnina_scored_vinardo.sdf.gz --scoring vinardo --cpu 8 --cnn crossdock_default2018
 ```
 
 3. Compute ROC / AUC:
