@@ -219,6 +219,12 @@ Notes:
 -------------------
 Purpose: allow receptor residues (sidechains / local backbone) to move during docking.
 
+```
+cd ..
+mkdir flexible
+cd flexible
+```
+
 1. Dock ligand from 3ERK into a similar protein (4ERK) without flexibility:
 ```
 wget http://files.rcsb.org/download/4ERK.pdb
