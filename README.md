@@ -71,7 +71,7 @@ Purpose: show GNINA can re-create the experimental bound pose.
 7. Perform a simple docking (autobox_ligand centers the box on the bound ligand)
 
 ```
-   gnina -r rec.pdb -l lig.pdb --autobox_ligand lig.pdb --seed 0 -o docked.pdb
+   gnina -r rec.pdb -l lig.pdb --autobox_ligand lig.pdb --seed 0 -o docked.pdb --cpu 8 --cnn crossdock_default2018
 ```
 
 8. Compute RMSD of top pose vs experimental ligand
