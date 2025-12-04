@@ -80,6 +80,10 @@ Purpose: show GNINA can re-create the experimental bound pose.
 ```
 
 Open docked.pdb in VMD / PyMOL and compare poses visually.
+```
+ pymol 3ERK.pdb rec.pdb rec-fix.pdb docked.pdb lig.pdb
+```
+
 
 Assignment 1 (suggested)
 - Investigate the effect of --exhaustiveness on the docking RMSD.
