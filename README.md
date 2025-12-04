@@ -185,8 +185,14 @@ Try the convolutional neural network (CNN) scoring family:
 
 - Score with CNN (CNN score is between 0 and 1; higher is better)
 ```
-gnina --score_only -r rec.pdb -l lig.pdb | grep CNN
+gnina --score_only -r ../rec.pdb -l ../lig.pdb | grep CNN
 ```
+for instance,
+
+```
+gnina --score_only -r ../re-docking/rec.pdb -l ../re-docking/lig.pdb --cnn redock_default2018_3
+```
+
 ## 📦  4) Blind docking
 ----------------
 Purpose: search the whole receptor surface for possible binding sites.
