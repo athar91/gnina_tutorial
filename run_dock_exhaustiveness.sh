@@ -8,7 +8,7 @@ for e in 8 16 24 32; do
     ln -sf ../rec.pdb .
 
     
-    /usr/local/gnina/gnina.1.3.2 -r rec.pdb -l lig.pdb \
+    gnina --cpu 8 --cnn crossdock_default2018 -r rec.pdb -l lig.pdb \
         --autobox_ligand lig.pdb \
         --seed 0 \
         -o docked.pdb \
