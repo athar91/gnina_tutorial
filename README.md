@@ -131,7 +131,7 @@ gnina -r rec.pdb -l lig-random.sdf --autobox_ligand ../re-docking/lig.pdb --seed
 5. RMSD of the best pose vs experimental ligand
 
 ```
-obrms -firstonly ../re-docking/lig.pdb docked_random.pdb
+obrms --firstonly ../re-docking/lig.pdb docked_random.pdb
 ```
 
 Increase the exhaustiveness parameter to 512, and investigate how rmsd and scoring changes
