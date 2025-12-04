@@ -205,7 +205,7 @@ cp ../re-docking/rec.pdb ../re-docking/lig.pdb .
 
 - Blind docking by centering autobox on receptor (autobox_ligand rec.pdb)
 ```
-gnina -r rec.pdb -l lig.pdb --autobox_ligand rec.pdb -o docked-blind.pdb --seed 0
+gnina -r rec.pdb -l lig.pdb --autobox_ligand rec.pdb -o docked-blind.pdb --seed 0 --cpu 8 --cnn crossdock_default2018
 ```
 - For a random ligand conformer:
 ```
@@ -231,7 +231,7 @@ grep OLO 4ERK.pdb > lig2.pdb
 ```
 
 ```
-gnina -r rec2-fix.pdb -l ../re-docking/lig.pdb --autobox_ligand lig2.pdb --seed 0 -o docked-lig-onto-4ERK.pdb
+gnina -r rec2-fix.pdb -l ../re-docking/lig.pdb --autobox_ligand lig2.pdb --seed 0 -o docked-lig-onto-4ERK.pdb --cpu 8 --cnn crossdock_default2018
 ```
 
 ```
