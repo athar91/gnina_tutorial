@@ -199,6 +199,7 @@ Purpose: search the whole receptor surface for possible binding sites.
 ```
 cd ..
 mkdir blind
+cd blind
 cp ../rec.pdb ../lig.pdb .
 ```
 
