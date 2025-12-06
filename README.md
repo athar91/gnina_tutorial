@@ -1,5 +1,5 @@
 # GNINA Docking Tutorial
-This tutorial is a part of course of "Molecular Modeling of biological System" of Department of Physics, University of Cagliari.
+This tutorial is part of the course Molecular Modeling of Biological Systems offered by the Department of Physics, University of Cagliari. It has been adapted for use on the Aula I (Block B) computer systems, which may result in minor compromises in performance and accuracy. 
 
 
 This repository provides a practical tutorial for common GNINA docking workflows:
